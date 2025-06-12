@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYC Neighborhood Guessing Game</title>
+</head>
+<body>
+    <h1>Welcome to the NYC Neighborhood Guessing Game!</h1>
+    <form action="/start" method="POST">
+        <label>Select a borough:</label>
+        <select name="borough">
+            {% for borough in boroughs %}
+                <option value="{{ borough }}">{{ borough }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Start Game</button>
+    </form>
+</body>
+</html>
