@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-    <title>NYC Neighborhood Guessing Game</title>
+    <title>NYC Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Welcome to the NYC Neighborhood Guessing Game!</h1>
-    <form action="/start" method="POST">
-        <label>Select a borough:</label>
+    <h1>Welkcome to the NYC Guessing gaem.</h1>
+
+    <form action="/start_game" method="POST">
+        <h2>Neighborhood Mode</h2>
+        <input type="radio" name="mode" value="neighborhood" required>
+        <label>Select Borough:</label>
         <select name="borough">
             {% for borough in boroughs %}
                 <option value="{{ borough }}">{{ borough }}</option>
             {% endfor %}
         </select>
+
+        <h2><input type="radio" name="mode" value="subway" required> Subway Line Mode</h2>
+        <p>Note: hints will be the starting and ending station</p>
+
         <button type="submit">Start Game</button>
     </form>
 </body>

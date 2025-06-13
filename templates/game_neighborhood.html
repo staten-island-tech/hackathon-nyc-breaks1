@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Neighborhood Guessing Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <h1>Guess the Neighborhood</h1>
+
+  {% if borough %}
+  <p><strong>Borough:</strong> {{ borough }}</p>
+  {% endif %}
+
+  <p><strong>Hint:</strong> {{ hint }}</p>
+  <p><strong>Extra Hint:</strong> {{ extra_hint }}</p>
+
+{% if not game_over %}
+<form method="post">
+    <input type="text" name="guess" placeholder="Your guess" required />
+    <button type="submit">Submit Guess</button>
+</form>
+{% endif %}
+
+<p>{{ message }}</p>
+
+{% if guesses %}
+  <h3>Your Guesses:</h3>
+  <ul>
+    {% for g in guesses %}
+      <li>{{ g }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<a href="/">Return</a>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Subway Line</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Guess the NYC Subway Line!</h2>
+    <p>Hint: This line starts at <strong>{{ start }}</strong> and ends at <strong>{{ end }}</strong>.</p>
+
+    {% if not game_over %}
+        <form method="POST">
+            <input type="text" name="guess" placeholder="e.g. A or 7" required>
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+
+    <p>{{ message }}</p>
+
+    {% if guesses %}
+        <h3>Your Guesses:</h3>
+        <ul>
+            {% for g in guesses %}
+                <li>{{ g }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="/">Return</a>
+</body>
+</html>
