@@ -6,7 +6,7 @@ app.secret_key = 'secrekey'
 
 # Neighborhoods organized by borough
 neighborhoods = {
-    "Manhattan": ["Harlem", "Chelsea", "SoHo", "Tribeca", "Inwood", "Battery Park"],
+    "Manhattan": ["Harlem", "Chelsea", "SoHo", "Tribeca", "Inwood", "Battery Park", "Financial District", "Greenwich Village", "China Town", "Washington Heights", "Morningside Heights", "Manhattan Valley"
     "Brooklyn": ["Williamsburg", "Bushwick", "Park Slope", "DUMBO", "Flatbush"],
     "Queens": ["Astoria", "Flushing", "Jamaica", "Forest Hills", "Long Island City"],
     "Bronx": ["Fordham", "Riverdale", "Mott Haven", "Pelham Bay"],
